@@ -28,7 +28,7 @@ app.post("/api/shorturl/new", async (req, res) => {
         newUrl: shortUrl
       });
       await shortenedUrl.save();
-      res.json({ original_url: urlToShorten, new_url: shortUrl });
+      res.send(`Your shortened URL is: ${shortUrl}`);
     } else {
       res.json({ error: "invalid URL" });
     }
