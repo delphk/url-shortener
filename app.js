@@ -7,9 +7,12 @@ const app = express();
 const Url = require("./models/url");
 const bodyParser = require("body-parser");
 
+//Middlewares
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: false }));
 
+
+//Routes
 app.get("/", (req, res) => {
   res.sendFile("views/index.html", { root: __dirname });
 });
